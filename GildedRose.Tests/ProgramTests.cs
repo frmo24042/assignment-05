@@ -168,7 +168,7 @@ public class ProgramTests
     {
         // Given
         var Items = program.Items;
-        var Sulfuras = new Item { Name = "Sulfuras", SellIn = 0, Quality = 80 };
+        var Sulfuras = new Item { Name = "Sulfuras, Hand of Ragnaros", SellIn = 0, Quality = 80 };
         Items.Add(Sulfuras);
 
         // When
@@ -183,7 +183,7 @@ public class ProgramTests
     {
         // Given
         var Items = program.Items;
-        var Sulfuras = new Item { Name = "Sulfuras", SellIn = 0, Quality = 80 };
+        var Sulfuras = new Item { Name = "Sulfuras, Hand of Ragnaros", SellIn = 0, Quality = 80 };
         Items.Add(Sulfuras);
 
         // When
