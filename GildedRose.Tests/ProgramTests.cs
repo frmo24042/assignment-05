@@ -193,5 +193,34 @@ public class ProgramTests
         Sulfuras.Quality.Should().Be(80);
     }
 
+    [Fact]
+    public void ConjuredItem_Quality_Should_Degrade_with_2()
+    {
+        // Given
+        var Items = program.Items;
+        var conjured = new ConjuredItem { Name = "Conjured mana cake", SellIn = 7, Quality = 4 };
+        Items.Add(conjured);
+
+        // When
+        program.UpdateQuality();
+
+        // Then
+        conjured.Quality.Should().Be(2);
+    }
+
+    [Fact]
+    public void ConjuredItem_Quality_Should_Degrade_with_4_when_sellin_has_Passed()
+    {
+        // Given
+        var Items = program.Items;
+        var conjured = new ConjuredItem { Name = "Conjured mana cake", SellIn = -1, Quality = 4 };
+        Items.Add(conjured);
+
+        // When
+        program.UpdateQuality();
+
+        // Then
+        conjured.Quality.Should().Be(0);
+    }
 
 }
